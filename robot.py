@@ -12,8 +12,8 @@ class ROBOT:
         self.motors = {}
         self.robotId = p.loadURDF("body.urdf")
         self.solutionID = solutionID
-        self.nn = NEURAL_NETWORK(f"brain{solutionID}.nndf")
-        os.system(f"rm brain{solutionID}.nndf")
+        self.nn = NEURAL_NETWORK(f"brain{str(solutionID)}.nndf")
+        os.system(f"rm brain{str(solutionID)}.nndf")
         
     def Prepare_To_Sense(self):
         for linkName in pyrosim.linkNamesToIndices:

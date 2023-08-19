@@ -2,6 +2,7 @@ from solution import SOLUTION
 import constants as c
 import copy
 import os
+import numpy as np
 
 class PARALLEL_HILL_CLIMBER:
     def __init__(self):
@@ -61,6 +62,9 @@ class PARALLEL_HILL_CLIMBER:
                 best = i
         self.parents[best].Start_Simulation("GUI")
         self.parents[best].Wait_For_Simulation_To_End()
+        
+        np.save("best_model.npy", self.parents[best].weights)
+        
         
     def Print(self):
         for i in self.parents:
