@@ -46,8 +46,8 @@ class ROBOT:
     def Get_Fitness(self):
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
         basePosition = basePositionAndOrientation[0]
-        xCoordinateOfLinkZero = basePosition[0]
+        xPosition = basePosition[0]
         f = open(f"tmp{self.solutionID}.txt", "w")
-        f.write(str(xCoordinateOfLinkZero))
+        f.write(str(xPosition))
         f.close()
         os.system(f"mv tmp{self.solutionID}.txt fitness{self.solutionID}.txt")
